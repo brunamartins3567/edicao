@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #D4AF37;
+  --color-gold-glow: rgba(212, 175, 55, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .gold-text {
+    @apply text-[--color-gold];
+  }
+  .gold-bg {
+    @apply bg-[--color-gold];
+  }
+  .gold-border {
+    @apply border border-[--color-gold];
+  }
+  .gold-glow {
+    box-shadow: 0 0 20px var(--color-gold-glow);
+  }
+  .green-bg {
+    @apply bg-[#25D366];
+  }
+  .card-dark {
+    background: linear-gradient(145deg, #0f0f0f, #000000);
+    @apply border border-zinc-800;
+  }
+}
+
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.btn-pulse {
+  animation: pulse-gold 2s infinite;
+}
+
+.btn-pulse-green {
+  animation: pulse-green 2s infinite;
+}
